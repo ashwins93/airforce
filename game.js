@@ -73,7 +73,9 @@ export class Game {
         this.gameLoop();
         console.log("enemy", enemyImg);
         setInterval(() => {
-          this.spawnEnemy(enemyImg);
+          if (this.enemies.length < this.maxEnemies) {
+            this.spawnEnemy(enemyImg);
+          }
         }, this.enemySpawnInterval);
       }
     );
